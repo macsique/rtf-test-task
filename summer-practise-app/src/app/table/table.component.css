@@ -1,0 +1,59 @@
+.table {
+  /* margin: 0 auto; */
+  margin-top: 50px;
+  box-shadow: 0 4px 56px rgb(0 0 0 / 12%);
+}
+
+td,
+th {
+  white-space: nowrap;
+  border-color: transparent;
+  border-right-color: var(--tui-base-04);
+}
+
+th {
+  padding: 0 3.75rem;
+}
+
+td:last-child,
+th:last-child {
+  border-right-color: transparent;
+}
+
+tbody {
+  border-color: transparent;
+}
+
+tr:nth-child(even) td {
+  background: var(--tui-base-02);
+}
+
+.textarea {
+  min-height: var(--tui-height-l);
+}
+
+tui-text-area {
+  min-height: inherit !important;
+}
+
+.remove {
+  transition: opacity;
+  opacity: 0;
+}
+
+tr:hover .remove,
+tr:focus-within .remove {
+  opacity: 1;
+}
+
+.new-company-btn {
+  width: max-content;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10rem;
+  position: relative;
+  margin-top: 30px;
+}

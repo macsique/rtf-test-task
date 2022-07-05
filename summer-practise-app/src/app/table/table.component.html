@@ -1,0 +1,94 @@
+<div class="table-container">
+  <button
+    class="new-company-btn"
+    tuiButton
+    type="button"
+    size="m"
+    (click)="showDialog()"
+  >
+    Добавить компанию
+  </button>
+
+  <table tuiTable class="table" [columns]="columns">
+    <thead>
+      <tr tuiThGroup>
+        <th tuiTh [resizable]="true">Наименование</th>
+        <th tuiTh>Адрес</th>
+        <th tuiTh>ОГРН</th>
+        <th tuiTh>ИНН</th>
+        <th tuiTh>Дата регистрации</th>
+        <th *tuiHead="'actions'" tuiTh [sorter]="null"></th>
+      </tr>
+    </thead>
+    <tbody tuiTbody [data]="companyList">
+      <tr *tuiRow="let item of companyList" tuiTr>
+        <td *tuiCell="'name'" tuiTd>
+          <tui-text-area
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="item.name"
+            [ngModelOptions]="options"
+            (ngModelChange)="onValueChange($event, 'name', item, companyList)"
+          ></tui-text-area>
+        </td>
+
+        <td *tuiCell="'address'" tuiTd>
+          <tui-text-area
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="item.address"
+            [ngModelOptions]="options"
+            (ngModelChange)="
+              onValueChange($event, 'address', item, companyList)
+            "
+          ></tui-text-area>
+        </td>
+
+        <td *tuiCell="'ogrn'" tuiTd>
+          <tui-text-area
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="item.ogrn"
+            [ngModelOptions]="options"
+            (ngModelChange)="onValueChange($event, 'ogrn', item, companyList)"
+          ></tui-text-area>
+        </td>
+
+        <td *tuiCell="'inn'" tuiTd>
+          <tui-text-area
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="item.inn"
+            [ngModelOptions]="options"
+            (ngModelChange)="onValueChange($event, 'inn', item, companyList)"
+          ></tui-text-area>
+        </td>
+
+        <td *tuiCell="'createDate'" tuiTd>
+          <tui-text-area
+            class="textarea"
+            [expandable]="true"
+            [ngModel]="item.createDate"
+            [ngModelOptions]="options"
+            (ngModelChange)="
+              onValueChange($event, 'createDate', item, companyList)
+            "
+          ></tui-text-area>
+        </td>
+
+        <td *tuiCell="'actions'" tuiTd>
+          <button
+            tuiIconButton
+            appearance="flat"
+            size="s"
+            icon="tuiIconTrash"
+            title="Remove"
+            shape="rounded"
+            class="remove"
+            (click)="remove(item)"
+          ></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,32 @@
+<tui-input tuiTextfieldSize="m" tuiAutoFocus [(ngModel)]="name">
+  Наименование
+</tui-input>
+
+<tui-input tuiTextfieldSize="m" tuiAutoFocus [(ngModel)]="name">
+  Адрес
+</tui-input>
+
+<tui-input tuiTextfieldSize="m" tuiAutoFocus [(ngModel)]="name">
+  ОГРН
+</tui-input>
+
+<tui-input tuiTextfieldSize="m" tuiAutoFocus [(ngModel)]="name">
+  ИНН
+</tui-input>
+
+<tui-input tuiTextfieldSize="m" tuiAutoFocus [(ngModel)]="name">
+  Дата регистрации
+</tui-input>
+
+<button
+  tuiButton
+  type="button"
+  size="m"
+  [disabled]="!hasValue"
+  (click)="submit()"
+  class="submit-btn"
+>
+  Добавить
+</button>
+
+
